@@ -190,6 +190,23 @@ ul {
       display:none;
   }
 
+  .errado {
+      border-color: red;
+  }
+
+  .flex{
+      margin-bottom: 40px;
+  }
+
+  .itenA {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+  }
+
   @media screen and (max-width: 1300px){
       .dropdown {
           width: 250px;
@@ -225,6 +242,10 @@ ul {
 
     .home{
         width: 100%;
+    }
+
+    .itenA{
+        margin-top: 150px;
     }
 
     @keyframes show {
