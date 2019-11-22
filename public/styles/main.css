@@ -27,7 +27,7 @@ h1{
 
 .dropdown{
     display:flex;
-    justify-content: center;
+    flex-direction: column;
     height: 720px;
     text-align: center;
     width: 16%;
@@ -35,14 +35,27 @@ h1{
 }
 
 .dropdown p{
+    color: rgb(179, 176, 176);
+    cursor: pointer;
+    margin-left: 10%;
+}
+
+.dropdown h2{
     border: 2px solid rgb(179, 176, 176);
     height: 35px;
     width: 160px;
     color: rgb(179, 176, 176);
     cursor: pointer;
+    margin-left: 10%;
+    font-size: 26px;
+    margin-top: 40px;
 }
 
 .dropdown p:hover{
+    color: rgb(255, 253, 253);
+}
+
+.dropdown h2:hover{
     color: rgb(255, 253, 253);
     border: 2px solid rgb(255, 255, 255);
 }
@@ -67,12 +80,12 @@ h1{
     }
   }
 
-  .dropdown p::after {
+  .dropdown h2::after {
     content: '⬏';
     margin-left: 10px;
 }
   
-  .dropdown.ativado p::after {
+  .dropdown.ativado h2::after {
     content: '⬎';
 }
 
@@ -169,6 +182,10 @@ ul {
       display:none;
   }
 
+  .ativado{
+      display:flex;
+  }
+
   @media screen and (max-width: 1300px){
       .dropdown {
           width: 250px;
@@ -184,8 +201,16 @@ ul {
         height: 150px;
     }
 
+    .dropdown {
+        align-items: center;
+    }
+
+    .dropdown h2 p{
+        margin-left: 0;
+    }
+
     .dropdown.ativado{
-        height: 400px;
+        height: 250px;
     }
 
     ul{
