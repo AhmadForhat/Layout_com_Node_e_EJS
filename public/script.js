@@ -13,6 +13,25 @@ const botao = document.querySelector(".botao");
 const itens = document.querySelector(".itens");
 const setas = document.querySelector(".flex2");
 const input = document.getElementById("numero");
+const seta1 = document.querySelector(".arrow1");
+const seta2 = document.querySelector(".arrow2");
+const seta3= document.querySelector(".arrow3");
+const seta4 = document.querySelector(".arrow4");
+console.log(seta2);
+
+//Slide
+seta2.addEventListener("click", function(){
+    homeAA.classList.remove('ativo');
+    homeAA.classList.add('none3');
+    homeBB.classList.add('ativo');
+    homeBB.classList.remove('none3');
+})
+
+seta3.addEventListener("click", function(){
+    homeBB.classList.add('none3');
+    homeAA.classList.add('ativo');
+    homeAA.classList.remove('none3');
+})
 
 options.addEventListener("click", function(){
     dropdown.classList.toggle('ativo');
@@ -39,19 +58,23 @@ dropdownOption1.addEventListener("click", function(){
     homeAA.classList.add('ativado');
     homeBB.classList.add('none3');
     homeAA.classList.remove('none3');
+    homeA.innerHTML = "";
+    input.classList.add('errado')
 })
 
 dropdownOption2.addEventListener("click", function(){
     homeAA.classList.add('none3');
     homeBB.classList.add('ativado');
     homeBB.classList.remove('none3');
+    homeB.innerHTML = "";
+    input.classList.add('errado')
 })
 
 botao.addEventListener("click", function myFunction() {
     const x = document.getElementById("numero").value;
     if( x == "" || x == 0){
-        input.classList.remove('errado')
-        homeA.innerHTML = "<div class=" + "flex iten" + ">" + "<p class=" + "circulo" + ">" + 1 + "</p><p class=" + "item" + ">" + "Item A" + 1 + "</p></div>";
+        input.classList.add('errado');
+        homeA.innerHTML = "";
     } else if ( x <= 3){
         homeA.innerHTML = ""
     for(i = 1; i <= x ; i++){
@@ -67,9 +90,9 @@ botao.addEventListener("click", function myFunction() {
   botao.addEventListener("click", function myFunction() {
     const x = document.getElementById("numero").value;
     if( x == "" || x == 0){
-        input.classList.remove('errado')
-        homeB.innerHTML = "<div class=" + "flex iten" + ">" + "<p class=" + "circulo" + ">" + 1 + "</p><p class=" + "item" + ">" + "Item B" + 1 + "</p></div>";
-    } else if ( x <= 3){
+        input.classList.add('errado');
+        homeB.innerHTML = "";
+    } else if ( x <= 3 && x >0){
         homeB.innerHTML = ""
     for(i = 1; i <= x ; i++){
         input.classList.remove('errado')
