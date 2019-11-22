@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res, next) {
     res.render('index', {
-        title: "Live University",
+        title: "Node With Ejs",
         version: "0.0.0",
         dev: "Ahmad Forhat",
     });
